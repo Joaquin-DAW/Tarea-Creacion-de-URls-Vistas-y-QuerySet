@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    
+<h1>Tareas completadas entre {{ anio_inicio }} y {{ anio_fin }}</h1>
+
+<ul>
+    {% for tarea in tareas_mostrar %}
+        <li>
+            <h2>{{ tarea.titulo }}</h2>
+            <p>Descripción: {{ tarea.descripcion }}</p>
+            <p>Fecha de creación: {{ tarea.fecha_creacion }}</p>
+            <p>Estado: {{ tarea.estado }}</p>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

@@ -7,9 +7,12 @@
     <ul>
         {% for asignacion in usuarios_asignados %}
             <li>
-                Usuario: {{ asignacion.usuario.nombre }} - 
+                Usuario: {{ asignacion.usuario.nombre }} 
+            </li>
+            <li>
                 Fecha de Asignación: {{ asignacion.fecha_asignacion }}
             </li>
+            <br>
         {% endfor %}
     </ul>
 

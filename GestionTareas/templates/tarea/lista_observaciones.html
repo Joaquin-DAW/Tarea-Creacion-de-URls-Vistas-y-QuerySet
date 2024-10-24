@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h1>Listado de tareas con observaciones que contienen "{{ texto_buscado }}"</h1>
+
+<ul>
+    {% for tarea in tareas_mostrar %}
+        <li>
+            Título: {{ tarea.titulo }}<br>
+            Descripción: {{ tarea.descripcion }}<br>
+            Fecha de creación: {{ tarea.fecha_creacion }}<br>
+
+            {% for asignacion in asignaciones %}
+                    <li>Observación: {{ asignacion.observaciones }}</li>
+            {% endfor %}
+
+        </li>
+        <br>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

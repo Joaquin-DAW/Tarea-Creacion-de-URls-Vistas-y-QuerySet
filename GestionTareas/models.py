@@ -44,6 +44,7 @@ class Tarea(models.Model):
 class AsignacionTarea(models.Model):
     tarea = models.ForeignKey(Tarea, on_delete=models.CASCADE)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    observaciones = models.TextField()
     fecha_asignacion = models.DateTimeField(default=timezone.now)
     
 class Comentario(models.Model):
