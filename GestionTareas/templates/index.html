@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+    <h1>Gestión de Tareas</h1>
+
+    <h2>Listado de enlaces de proyectos</h2>
+    <ul>
+        <li><a href="{% url 'lista_proyectos' %}">Listado de proyectos</a></li>
+    </ul><br>
+    <h2>Listado de enlaces de tareas</h2>
+    <ul>
+        <li><a href="{% url 'lista_tarea_asignada' 31 %}">Listado de tareas del proyecto 31</a></li>
+    </ul><br>
+    <h2>Listado de enlaces de usuarios</h2>
+    <ul>
+        <li><a href="{% url 'lista_usuarios_asignados' 24 %}">Listado de usuarios asignados a la tarea 24</a></li>
+    </ul>
+    </body>
+</html>
