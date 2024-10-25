@@ -10,4 +10,6 @@ urlpatterns = [
     path('tareas/completadas/<int:anio_inicio>/<int:anio_fin>/', views.listar_tareas_completadas, name='lista_tareas_completadas'),
     path('proyecto/<int:proyecto_id>/tarea/<int:tarea_id>/ultimo_comentario/', views.ultimo_comentario_usuario, name='ultimo_comentario_usuario'),
     path('tarea/<int:tarea_id>/comentarios/<str:palabra>/<int:anio>/', views.comentarios_tarea_concreta, name='comentarios_tarea'),
+    path('proyecto/<int:proyecto_id>/etiquetas/', views.listar_etiquetas_tareas_proyecto, name='lista_etiquetas_tareas_proyecto'),
+    path('tarea/<int:tarea_id>/usuarios/no_asignados/', views.listar_usuarios_no_asignados, name='lista_usuarios_no_asignados'),
 ]

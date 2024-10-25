@@ -7,25 +7,31 @@
     <ul>
         <li><a href="{% url 'lista_proyectos' %}">Listado de proyectos</a></li>
     </ul><br>
+    <ul>
+        <li><a href="{% url 'lista_etiquetas_tareas_proyecto' 12 %}">Todas las etiquetas usadas en todas las tareas de un proyecto concreto</a></li>
+    </ul><br>
     <h2>Listado de enlaces de tareas</h2>
     <ul>
-        <li><a href="{% url 'lista_tarea_asignada' 2 %}">Listado de tareas del proyecto 31</a></li>
+        <li><a href="{% url 'lista_tarea_asignada' 13 %}">Listado de tareas del proyecto 13</a></li>
     </ul><br>
     <ul>
-        <li><a href="{% url 'lista_tarea_texto' "price" %}">Listado de tareas con un texto concreto</a></li>
+        <li><a href="{% url 'lista_tarea_texto' "Later" %}">Listado de tareas con un texto concreto</a></li>
     </ul><br>
     <ul>
         <li><a href="{% url 'lista_tareas_completadas' 2005 2023 %}">Listado de tareas completadas entre 2005 y 2023</a></li>
     </ul><br>
     <ul>
-        <li><a href="{% url 'comentarios_tarea' 2 "Environmental" 1993 %}">Todos los comentarios de una tarea concreta</a></li>
+        <li><a href="{% url 'comentarios_tarea' 9 "Level" 2014 %}">Todos los comentarios de una tarea concreta en un año especifico</a></li>
     </ul><br>
     <h2>Listado de enlaces de usuarios</h2>
     <ul>
-        <li><a href="{% url 'lista_usuarios_asignados' 5 %}">Listado de usuarios asignados a la tarea 24</a></li>
+        <li><a href="{% url 'lista_usuarios_asignados' 15 %}">Listado de usuarios asignados a la tarea 15</a></li>
     </ul><br>
     <ul>
-        <li><a href="{% url 'ultimo_comentario_usuario' 2 5 %}">Último usuario en realizar un comentario</a></li>
+        <li><a href="{% url 'ultimo_comentario_usuario' 14 7 %}">Último usuario en realizar un comentario</a></li>
+    </ul><br>
+    <ul>
+        <li><a href="{% url 'lista_usuarios_no_asignados' 6 %}">Usuarios que no estan asignados a ninguna tarea</a></li>
     </ul><br>
     </body>
 </html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<h1>Etiquetas de las tareas del Proyecto: {{ proyecto.nombre }}</h1>
+
+<ul>
+    {% for etiqueta in etiquetas %}
+        <li>{{ etiqueta.nombre }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

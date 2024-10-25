@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Proyecto, Tarea, AsignacionTarea, Comentario
+from .models import Proyecto, Tarea, AsignacionTarea, Comentario, Etiqueta, Usuario
 
 # Create your views here.
 
@@ -49,3 +49,17 @@ def comentarios_tarea_concreta(request, tarea_id, palabra, anio):
     comentarios = Comentario.objects.filter(tarea=tarea, contenido__startswith=palabra, fecha_comentario__year=anio)
 
     return render(request, 'tarea/comentarios_tarea.html', {'tarea': tarea,'comentarios': comentarios,'palabra': palabra,'anio': anio})
+
+def listar_etiquetas_tareas_proyecto(request, proyecto_id):
+    proyecto = Proyecto.objects.get(id=proyecto_id)
+    tareas = Tarea.objects.filter(proyecto=proyecto)
+    etiquetas = Etiqueta.objects.filter(tarea__in=tareas).distinct()
+
+    return render(request, 'proyecto/lista_etiquetas_proyecto.html', {'proyecto': proyecto, 'etiquetas': etiquetas})
+
+def listar_usuarios_no_asignados(request, tarea_id):
+    tarea = Tarea.objects.get(id=tarea_id)
+    usuarios_asignados = Usuario.objects.filter(asignaciontarea__tarea=tarea)
+    usuarios_no_asignados = Usuario.objects.exclude(id__in=usuarios_asignados)
+
+    return render(request, 'usuario/usuarios_no_asignados.html', {'tarea': tarea, 'usuarios_no_asignados': usuarios_no_asignados})
