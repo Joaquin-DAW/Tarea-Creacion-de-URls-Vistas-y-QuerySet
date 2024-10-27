@@ -8,30 +8,30 @@
         <li><a href="{% url 'lista_proyectos' %}">Listado de proyectos</a></li>
     </ul><br>
     <ul>
-        <li><a href="{% url 'lista_etiquetas_tareas_proyecto' 12 %}">Todas las etiquetas usadas en todas las tareas de un proyecto concreto</a></li>
+        <li><a href="{% url 'lista_etiquetas_tareas_proyecto' 13 %}">Todas las etiquetas usadas en todas las tareas de un proyecto concreto (13)</a></li>
     </ul><br>
     <h2>Listado de enlaces de tareas</h2>
     <ul>
-        <li><a href="{% url 'lista_tarea_asignada' 13 %}">Listado de tareas del proyecto 13</a></li>
+        <li><a href="{% url 'lista_tarea_asignada' 12 %}">Listado de tareas del proyecto 12</a></li>
     </ul><br>
     <ul>
-        <li><a href="{% url 'lista_tarea_texto' "Later" %}">Listado de tareas con un texto concreto</a></li>
+        <li><a href="{% url 'lista_tarea_texto' "change" %}">Listado de tareas con un texto concreto</a></li>
     </ul><br>
     <ul>
-        <li><a href="{% url 'lista_tareas_completadas' 2005 2023 %}">Listado de tareas completadas entre 2005 y 2023</a></li>
+        <li><a href="{% url 'lista_tareas_completadas' 2000 2024 %}">Listado de tareas completadas entre 2005 y 2024</a></li>
     </ul><br>
     <ul>
-        <li><a href="{% url 'comentarios_tarea' 9 "Level" 2014 %}">Todos los comentarios de una tarea concreta en un año especifico</a></li>
+        <li><a href="{% url 'comentarios_tarea' 9 "Team" 1975 %}">Todos los comentarios de una tarea concreta en un año especifico y comiencen por una palabra determinada</a></li>
     </ul><br>
     <h2>Listado de enlaces de usuarios</h2>
     <ul>
-        <li><a href="{% url 'lista_usuarios_asignados' 15 %}">Listado de usuarios asignados a la tarea 15</a></li>
+        <li><a href="{% url 'lista_usuarios_asignados' 12 %}">Listado de usuarios asignados a la tarea 12</a></li>
     </ul><br>
     <ul>
-        <li><a href="{% url 'ultimo_comentario_usuario' 14 7 %}">Último usuario en realizar un comentario</a></li>
+        <li><a href="{% url 'ultimo_comentario_usuario' 14 15 %}">Último usuario en realizar un comentario en una tarea de un proyecto concreto</a></li>
     </ul><br>
     <ul>
-        <li><a href="{% url 'lista_usuarios_no_asignados' 6 %}">Usuarios que no estan asignados a ninguna tarea</a></li>
+        <li><a href="{% url 'lista_usuarios_no_asignados' 7 %}">Usuarios que no estan asignados a ninguna tarea</a></li>
     </ul><br>
     </body>
 </html>

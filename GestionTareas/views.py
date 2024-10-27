@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Proyecto, Tarea, AsignacionTarea, Comentario, Etiqueta, Usuario
+from django.views.defaults import page_not_found
 
 # Create your views here.
 
@@ -63,3 +64,15 @@ def listar_usuarios_no_asignados(request, tarea_id):
     usuarios_no_asignados = Usuario.objects.exclude(id__in=usuarios_asignados)
 
     return render(request, 'usuario/usuarios_no_asignados.html', {'tarea': tarea, 'usuarios_no_asignados': usuarios_no_asignados})
+
+def mi_error_404(request,exception=None):
+    return render(request, 'errores/404.html',None,None,404)
+
+def mi_error_400(request, exception=None):
+    return render(request, 'errors/400.html', None,None,400)
+
+def mi_error_403(request, exception=None):
+    return render(request, 'errors/403.html', None,None,403)
+
+def mi_error_500(request):
+    return render(request, 'errors/500.html', None,None,500)

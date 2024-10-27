@@ -16,8 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf.urls import handler400,handler404,handler403,handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("GestionTareas.urls"))
 ]
+
+handler400 = 'GestionTareas.views.mi_error_400'
+handler403 = 'GestionTareas.views.mi_error_403'
+handler404 = 'GestionTareas.views.mi_error_404'
+handler500 = 'GestionTareas.views.mi_error_500'
