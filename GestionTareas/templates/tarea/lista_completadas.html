@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
-    
-<h1>Tareas completadas entre {{ anio_inicio }} y {{ anio_fin }}</h1>
+{% extends "principal.html" %}
 
-<ul>
-    {% for tarea in tareas_mostrar %}
-        <li>
-            <h2>{{ tarea.titulo }}</h2>
-            <p>Descripción: {{ tarea.descripcion }}</p>
-            <p>Fecha de creación: {{ tarea.fecha_creacion }}</p>
-            <p>Estado: {{ tarea.estado }}</p>
-        </li>
-    {% endfor %}
-</ul>
+{% block contenido %}
+    {% block cabecera %}
+    <h1>Tareas completadas entre {{ anio_inicio }} y {{ anio_fin }}</h1>
+    {% endblock %}
 
-</body>
-</html>
+    <ul>
+        {% for tarea in tareas_mostrar %}
+            <li>
+                <h2>{{ tarea.titulo }}</h2>
+                <p>Descripción: {{ tarea.descripcion }}</p>
+                <p>Fecha de creación: {{ tarea.fecha_creacion }}</p>
+                <p>Estado: {{ tarea.estado }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

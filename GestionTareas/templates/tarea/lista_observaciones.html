@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
-<h1>Listado de tareas con observaciones que contienen "{{ texto_buscado }}"</h1>
+{% extends "principal.html" %}
 
-<ul>
+{% block contenido %}
+    {% block cabecera %}
+    <h1>Listado de tareas con observaciones que contienen "{{ texto_buscado }}"</h1>
+    {% endblock %}
+
+    <ul>
     {% for tarea in tareas_mostrar %}
         <li>
             Título: {{ tarea.titulo }}<br>
@@ -18,7 +19,5 @@
         </li>
         <br>
     {% endfor %}
-</ul>
-
-</body>
-</html>
+    </ul>
+{% endblock %}

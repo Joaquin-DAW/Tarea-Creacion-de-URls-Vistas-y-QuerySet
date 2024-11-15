@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
+{% extends "principal.html" %}
 
-<h1>Usuarios no asignados a la tarea: {{ tarea.titulo }}</h1>
-
-<ol>
-    {% for usuario in usuarios_no_asignados %}
-        <li>{{ usuario.nombre }} ({{ usuario.email }})</li>
-    {% endfor %}
-</ol>
-
-</body>
-</html>
+{% block contenido %}
+    {% block cabecera %}
+    <h1>Usuarios no asignados a la tarea: {{ tarea.titulo }}</h1>
+    {% endblock %}
+        <ol>
+            {% for usuario in usuarios_no_asignados %}
+                <li>{{ usuario.nombre }} ({{ usuario.email }})</li>
+            {% endfor %}
+        </ol>
+{% endblock %}

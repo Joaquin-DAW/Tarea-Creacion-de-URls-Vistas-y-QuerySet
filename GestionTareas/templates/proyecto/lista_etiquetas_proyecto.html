@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
+{% extends "principal.html" %}
 
-<h1>Etiquetas de las tareas del Proyecto: {{ proyecto.nombre }}</h1>
+    {% block contenido %}
 
-<ul>
-    {% for etiqueta in etiquetas %}
-        <li>{{ etiqueta.nombre }}</li>
-    {% endfor %}
-</ul>
-</body>
-</html>
+        {% block cabecera %}
+            <h1>Etiquetas de las tareas del Proyecto: {{ proyecto.nombre }}</h1>
+        {% endblock %}
+
+            {% for etiqueta in etiquetas %}
+                <li>{{ etiqueta.nombre }}</li>
+            {% endfor %}
+    {% endblock %}

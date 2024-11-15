@@ -1,6 +1,14 @@
+{% extends "principal.html" %}
+
+{% load static %}
 
     {% block contenido %}
     {% for proyecto in proyectos_mostrar %}
+
+    {% block cabecera %}
+    <h1>Listado de Proyectos</h1>
+    {% endblock %}
+
     <div>
         <h2>Nombre: {{ proyecto.nombre }} </h2>
         <h2>Descripcion: {{ proyecto.descripcion }} </h2>
@@ -19,7 +27,7 @@
         <br><br>
     </div>
         
-    {% empty %}
-        <h1>Lo sentimos pero no hay proyectos</h1>
-    {% endfor %}
+        {% empty %}
+            <h1>Lo sentimos pero no hay proyectos</h1>
+        {% endfor %}
     {% endblock %}

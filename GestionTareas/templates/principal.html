@@ -1,18 +1,24 @@
 <html>
+    {% load static %}
     <head>
-        
+        <meta charset="UTF-8">
+        <title>Gestión de Tareas</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="{% static 'javascript/aviso.js' %}"></script>
     </head>
     <body>
 
-    {% block cabecera %}
-    {% endblock %}
+        {% block cabecera %}
+        {% endblock %}
+            <img src="{% static 'imagenes/logo.png' %}" alt="Logo de la aplicación"  width="75vh">
+        {% include 'estructura/menu.html' %}
+            
+        {% block contenido %}
+        {% endblock %}
 
-    {% include 'estructura/menu.html' %}
-        
-    {% block contenido %}
-    {% endblock %}
-
-    {% include 'estructura/pie.html' %}
+        {% include 'estructura/pie.html' %}
 
     </body>
 </html>
+<!--  **Punto 3** cumplido: Esta template sirve como base y de ella heredarán las demás. Tiene dos bloques (`cabecera` y `contenido`), 
+            así como las inclusiones de `menu.html` y `pie.html`.-->

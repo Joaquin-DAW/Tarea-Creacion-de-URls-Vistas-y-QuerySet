@@ -1,3 +1,5 @@
+{% load static %}
+
 <h2>Estos son los links del menú.</h2>
 
         <h3>Listado de enlaces de proyectos</h3>
@@ -5,7 +7,7 @@
             <li><a href="{% url 'lista_proyectos' %}">Listado de proyectos</a></li>
         </ul><br>
         <ul>
-            <li><a href="{% url 'lista_etiquetas_tareas_proyecto' 13 %}">Todas las etiquetas usadas en todas las tareas de un proyecto concreto (13)</a></li>
+            <li><a href="{% url 'lista_etiquetas_tareas_proyecto' 12 %}">Todas las etiquetas usadas en todas las tareas de un proyecto concreto (12)</a></li>
         </ul><br>
         <h3>Listado de enlaces de tareas</h3>
         <ul>
@@ -30,3 +32,5 @@
         <ul>
             <li><a href="{% url 'lista_usuarios_no_asignados' 7 %}">Usuarios que no estan asignados a ninguna tarea</a></li>
         </ul><br>
+
+<!-- - **Punto 1** cumplido: Este archivo contiene el menú de navegación superior con los links necesarios.-->
