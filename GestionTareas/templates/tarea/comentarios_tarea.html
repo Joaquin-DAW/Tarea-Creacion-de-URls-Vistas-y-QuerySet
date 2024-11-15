@@ -7,15 +7,7 @@
     {% endblock %}
     <ul>
         {% for comentario in comentarios %}
-            <li>
-                <p><strong>Autor:</strong> {{ comentario.autor.nombre }}</p>
-            </li>
-            <li>
-                <p><strong>Comentario:</strong> {{ comentario.contenido }}</p>
-            </li>
-            <li>
-                <p><strong>Fecha:</strong> {{ comentario.fecha_comentario }}</p>
-            </li>
+            {% include 'tarea/tarea.html' %}
         {% endfor %}
     </ul>
 {% endblock %}

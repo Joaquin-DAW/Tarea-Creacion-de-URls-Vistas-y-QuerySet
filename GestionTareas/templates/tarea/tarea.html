@@ -6,5 +6,19 @@
     <p>Completado: {{ tarea.completada}}
     <p>Fecha de Creación: {{ tarea.fecha_creacion }} </p>
     <p> Fecha vencimiento: {{ tarea.hora_vencimiento }} </p>
+    {% for asignacion in asignaciones %}
+        <li>Observación: {{ asignacion.observaciones }}</li>
+    {% endfor %}
+    {% for comentario in comentarios %}
+            <li>
+                <p><strong>Autor:</strong> {{ comentario.autor.nombre }}</p>
+            </li>
+            <li>
+                <p><strong>Comentario:</strong> {{ comentario.contenido }}</p>
+            </li>
+            <li>
+                <p><strong>Fecha:</strong> {{ comentario.fecha_comentario }}</p>
+            </li>
+        {% endfor %}
     <br><br>
 </div>

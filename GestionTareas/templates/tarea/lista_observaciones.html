@@ -7,17 +7,7 @@
 
     <ul>
     {% for tarea in tareas_mostrar %}
-        <li>
-            Título: {{ tarea.titulo }}<br>
-            Descripción: {{ tarea.descripcion }}<br>
-            Fecha de creación: {{ tarea.fecha_creacion }}<br>
-
-            {% for asignacion in asignaciones %}
-                    <li>Observación: {{ asignacion.observaciones }}</li>
-            {% endfor %}
-
-        </li>
-        <br>
+        {% include 'tarea/tarea.html' %}
     {% endfor %}
     </ul>
 {% endblock %}
