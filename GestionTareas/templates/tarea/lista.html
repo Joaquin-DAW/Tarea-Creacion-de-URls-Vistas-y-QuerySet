@@ -4,13 +4,14 @@
     {% block cabecera %}
     <h1>Listado de Tareas para el Proyecto 12: {{ proyecto.nombre }}</h1>
     {% endblock %}
-        {% if tareas_mostrar %}
-        <ul>
+        {% if tareas_mostrar|length < 5 %} <!-- Filtro de tipo length, para contar el numero de elementos de una lista-->
+            <p>Este proyecto tiene menos de 5 tareas asignadas.</p>
+        {% else %}
+            <p>Este proyecto tiene más de 5 tareas asignadas</p>
+        {% endif %}
+            <ul>
         {% for tarea in tareas_mostrar %}
             {% include 'tarea/tarea.html' %}
         {% endfor %}
         </ul>
-        {% else %}
-            <p>No hay tareas asignadas a este proyecto.</p>
-        {% endif %}
 {% endblock %}

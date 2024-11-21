@@ -1,11 +1,13 @@
 <div>
     <h2>Título: {{ tarea.titulo }} </h2>
     <p>Descripción: {{ tarea.descripcion }} </p>
-    <p>Prioridad: {{ tarea.prioridad }} </p>
+    <p>Descripción: {{ tarea.descripcion|truncatechars:50 }} </p> <!-- Filtro truncatechars, se encarga de recorta el texto a un número de caracteres determinado-->
+    <p>Prioridad: {{ tarea.prioridad }} </p> 
     <p>Estado: {{ tarea.estado }} </p>
-    <p>Completado: {{ tarea.completada}}
+    <p>Completado: {{ tarea.completada|yesno:"Sí,No"}}</p> <!-- Filtro yesno, convierte los valores booleanos a un texto personalizado, el primer valor que configuramos es el true y el segundo el false-->
     <p>Fecha de Creación: {{ tarea.fecha_creacion }} </p>
-    <p> Fecha vencimiento: {{ tarea.hora_vencimiento }} </p>
+    <p>Fecha vencimiento: {{ tarea.hora_vencimiento }} </p>
+    <p>Hora vencimiento: {{ tarea.hora_vencimiento|time:"H:i" }} </p> <!-- Filtro time, convierte un valor de fecha u hora en formato legible-->
     {% for asignacion in asignaciones %}
         <li>Observación: {{ asignacion.observaciones }}</li>
     {% endfor %}
@@ -15,6 +17,7 @@
             </li>
             <li>
                 <p><strong>Comentario:</strong> {{ comentario.contenido }}</p>
+                <p>El comentario tiene {{ comentario.contenido|wordcount }} palabras.</p> <!-- Filtro wordcount, cuenta el número de palabas de un texto.-->
             </li>
             <li>
                 <p><strong>Fecha:</strong> {{ comentario.fecha_comentario }}</p>

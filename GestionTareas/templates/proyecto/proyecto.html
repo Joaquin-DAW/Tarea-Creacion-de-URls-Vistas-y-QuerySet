@@ -1,8 +1,8 @@
 <div>
-    <h2>Nombre: {{ proyecto.nombre }} </h2>
+    <h2>Nombre: {{ proyecto.nombre|upper }} </h2> <!-- Filtro upper, convierte el texto en mayúscula-->
     <h2>Descripcion: {{ proyecto.descripcion }} </h2>
-    <h2>Duracion estimada: {{ proyecto.duracion_estimada }} </h2>
-    <h2>Fecha Inicio: {{ proyecto.fecha_inicio }} </h2>
+    <h2>Duracion estimada: {{ proyecto.duracion_estimada  }} </h2> 
+    <h2>Fecha Inicio: {{ proyecto.fecha_inicio|date:"d/m/Y" }} </h2> <!-- Filtro de tipo date, para darle formato a la fecha-->
     <h2>Fecha Finalizacion: {{ proyecto.fecha_finalizacion }} </h2>
 
     <h3>Creador: {{ proyecto.creador.nombre }} </h3>
@@ -16,8 +16,8 @@
     <h3>Etiquetas del proyecto:</h3>
     <ul>
     {% for etiqueta in etiquetas %}
-                <h3>Nombre etiqueta: {{ etiqueta.nombre }} </h3>
-            {% endfor %}
+            <h3>Nombre etiqueta: {{ etiqueta.nombre }} </h3>
+    {% endfor %}
     </ul>
     <br><br>
 </div>

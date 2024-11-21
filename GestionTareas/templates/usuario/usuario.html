@@ -1,7 +1,7 @@
 <li>
     Usuario: {{ usuario.nombre }}
     {% if usuario.email %}
-        ({{ usuario.email }})
+        <p>Email: {{ usuario.email|default:"No disponible" }}</p> <!-- Filtro default, para mostrar un valor por defecto si el campo está vacío-->
     {% endif %}
 </li>
     {% if fecha_asignacion %}
