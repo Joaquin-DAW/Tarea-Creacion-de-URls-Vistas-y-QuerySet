@@ -1,0 +1,12 @@
+<li>
+    Usuario: {{ usuario.nombre }}
+    {% if usuario.email %}
+        ({{ usuario.email }})
+    {% endif %}
+</li>
+    {% if fecha_asignacion %}
+        <li>
+            Fecha de Asignación: {{ fecha_asignacion }}
+        </li>
+    {% endif %}
+<br>

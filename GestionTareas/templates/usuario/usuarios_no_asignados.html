@@ -6,7 +6,7 @@
     {% endblock %}
         <ol>
             {% for usuario in usuarios_no_asignados %}
-                <li>{{ usuario.nombre }} ({{ usuario.email }})</li>
+                {% include "usuario/usuario.html" with usuario=usuario %}
             {% endfor %}
         </ol>
 {% endblock %}

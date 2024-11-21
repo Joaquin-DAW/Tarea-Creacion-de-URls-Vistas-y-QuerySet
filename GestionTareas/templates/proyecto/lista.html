@@ -1,33 +1,20 @@
 {% extends "principal.html" %}
 
-{% load static %}
-
-    {% block contenido %}
-    {% for proyecto in proyectos_mostrar %}
+{% block contenido %}
 
     {% block cabecera %}
-    <h1>Listado de Proyectos</h1>
+        <h1>Listado de Proyectos</h1>
     {% endblock %}
 
-    <div>
-        <h2>Nombre: {{ proyecto.nombre }} </h2>
-        <h2>Descripcion: {{ proyecto.descripcion }} </h2>
-        <h2>Duracion estimada: {{ proyecto.duracion_estimada }} </h2>
-        <h2>Fecha Inicio: {{ proyecto.fecha_inicio }} </h2>
-        <h2>Fecha Finalizacion: {{ proyecto.fecha_finalizacion }} </h2>
+    {% for proyecto in proyectos_mostrar %}
 
-        <h3>Creador: {{ proyecto.creador.nombre }} </h3>
+    {% if proyectos_mostrar|length >= 15 %}
+        <p>Hay demasiados proyectos.</p>
+    {% endif %}
+
+        {% include 'proyecto/proyecto.html' %}
         
-        <h3>Usuarios Asignados:</h3>
-        <ul>
-            {% for usuario in proyecto.usuarios_asignados.all %}
-                <li>{{ usuario.nombre }} </li>
-            {% endfor %}
-        </ul>
-        <br><br>
-    </div>
-        
-        {% empty %}
+    {% empty %}
             <h1>Lo sentimos pero no hay proyectos</h1>
-        {% endfor %}
-    {% endblock %}
+    {% endfor %}
+{% endblock %}

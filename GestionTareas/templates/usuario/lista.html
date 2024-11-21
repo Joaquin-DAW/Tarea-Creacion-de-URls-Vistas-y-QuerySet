@@ -6,13 +6,7 @@
     {% endblock %}
     <ul>
         {% for asignacion in usuarios_asignados %}
-            <li>
-                Usuario: {{ asignacion.usuario.nombre }} 
-            </li>
-            <li>
-                Fecha de Asignación: {{ asignacion.fecha_asignacion }}
-            </li>
-            <br>
+            {% include "usuario/usuario.html" with usuario=asignacion.usuario fecha_asignacion=asignacion.fecha_asignacion %}
         {% endfor %}
     </ul>
 {% endblock %}

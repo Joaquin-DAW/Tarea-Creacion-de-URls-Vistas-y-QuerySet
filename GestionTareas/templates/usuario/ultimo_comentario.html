@@ -5,8 +5,10 @@
     <h1>Último comentario de la tarea: {{ tarea.titulo }}</h1>
     {% endblock %}
     
-    <p><strong>Autor:</strong> {{ ultimo_comentario.autor.nombre }}</p>
+    <ul>
+        {% include "usuario/usuario.html" with usuario=ultimo_comentario.autor %}
+    </ul>
     <p><strong>Comentario:</strong> {{ ultimo_comentario.contenido }}</p>
     <p><strong>Fecha:</strong> {{ ultimo_comentario.fecha_comentario }}</p>
 
-{% endblock %}
+{% endblock %} 

@@ -7,12 +7,7 @@
 
     <ul>
         {% for tarea in tareas_mostrar %}
-            <li>
-                <h2>{{ tarea.titulo }}</h2>
-                <p>Descripción: {{ tarea.descripcion }}</p>
-                <p>Fecha de creación: {{ tarea.fecha_creacion }}</p>
-                <p>Estado: {{ tarea.estado }}</p>
-            </li>
+            {% include 'tarea/tarea.html' %}
         {% endfor %}
     </ul>
 {% endblock %}

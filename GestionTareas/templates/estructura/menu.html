@@ -1,19 +1,19 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<h2>Estos son los links del menú.</h2>
+<h2>Bienvenido a tu panel de proyectos</h2>
 
-<h3>Menú principal</h3>
+<!-- Menú principal -->
 <nav class="menu-horizontal">
-    <ul>
-        <li><a href="{% url 'lista_proyectos' %}">Listado de proyectos</a></li>
-        <li><a href="{% url 'lista_etiquetas_tareas_proyecto' 12 %}">Etiquetas de tareas (12)</a></li>
-        <li><a href="{% url 'lista_tarea_asignada' 12 %}">Tareas del proyecto 12</a></li>
+    <ul class="menu-items">
+        <li><a href="{% url 'lista_proyectos' %}">Proyectos</a></li>
+        <li><a href="{% url 'lista_etiquetas_tareas_proyecto' 12 %}">Etiqueta tarea 12</a></li>
+        <li><a href="{% url 'lista_tarea_asignada' 12 %}">Tarea número 12</a></li>
         <li><a href="{% url 'lista_tarea_texto' 'change' %}">Tareas con texto 'change'</a></li>
-        <li><a href="{% url 'lista_tareas_completadas' 2000 2024 %}">Tareas completadas (2000-2024)</a></li>
-        <li><a href="{% url 'comentarios_tarea' 15 'car' 2021 %}">Comentarios (Tarea 15, 'car', 2021)</a></li>
-        <li><a href="{% url 'lista_usuarios_asignados' 12 %}">Usuarios en tarea 12</a></li>
-        <li><a href="{% url 'ultimo_comentario_usuario' 14 15 %}">Último comentario (proyecto 14, tarea 15)</a></li>
-        <li><a href="{% url 'lista_usuarios_no_asignados' 7 %}">Usuarios sin tareas (7)</a></li>
+        <li><a href="{% url 'lista_tareas_completadas' 2000 2024 %}">Tareas completadas</a></li>
+        <li><a href="{% url 'comentarios_tarea' 15 'Especially' 2021 %}">Comentarios tarea concreta</a></li>
+        <li><a href="{% url 'lista_usuarios_asignados' 12 %}">Usuarios asignados</a></li>
+        <li><a href="{% url 'ultimo_comentario_usuario' 14 15 %}">Último comentario</a></li>
+        <li><a href="{% url 'lista_usuarios_no_asignados' 7 %}">Usuarios sin tareas</a></li>
     </ul>
 </nav>
 

@@ -5,8 +5,5 @@
         {% block cabecera %}
             <h1>Etiquetas de las tareas del Proyecto: {{ proyecto.nombre }}</h1>
         {% endblock %}
-
-            {% for etiqueta in etiquetas %}
-                <li>{{ etiqueta.nombre }}</li>
-            {% endfor %}
+            {% include 'proyecto/proyecto.html' %}
     {% endblock %}
